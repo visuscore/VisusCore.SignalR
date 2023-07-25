@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "outDir": "./wwwroot/js",
+    "module": "ES6",
+    "target": "ES6",
+    "allowJs": true,
+    "checkJs": false,
+    "jsx": "react",
+    "removeComments": true,
+    "pretty": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "inlineSourceMap": true,
+    "noImplicitAny": true,
+  },
+  "include": [
+    "./Assets/Scripts/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
