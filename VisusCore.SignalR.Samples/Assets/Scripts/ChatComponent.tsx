@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import * as signalR from "@microsoft/signalr";
+import * as signalRMsgPack from "@microsoft/signalr-protocol-msgpack";
 
 interface PageProps { }
 
@@ -32,7 +33,8 @@ export class Chat extends Component<PageProps, PageState> {
 
         const hubConnection = new signalR.HubConnectionBuilder()
             .withUrl("/chatHub", signalR.HttpTransportType.WebSockets)
-            .configureLogging(signalR.LogLevel.Error)
+            .configureLogging(signalR.LogLevel.Trace)
+            .withHubProtocol(new signalRMsgPack.MessagePackHubProtocol())
             .withAutomaticReconnect()
             .build();
 

@@ -17,7 +17,8 @@ public class Startup : StartupBase
         services.Configure<WebSocketOptions>(options => options.KeepAliveInterval = TimeSpan.Zero)
             .TryAddEnumerable(ServiceDescriptor.Singleton<IConfigureOptions<HubOptions>, HubOptionsSetup>());
         services.AddSignalRCore()
-            .AddJsonProtocol();
+            .AddJsonProtocol()
+            .AddMessagePackProtocol();
     }
 
     public override void Configure(IApplicationBuilder app, IEndpointRouteBuilder routes, IServiceProvider serviceProvider) =>

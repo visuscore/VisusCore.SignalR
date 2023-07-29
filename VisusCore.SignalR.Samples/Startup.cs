@@ -16,5 +16,5 @@ public class Startup : StartupBase
 
     public override void Configure(IApplicationBuilder app, IEndpointRouteBuilder routes, IServiceProvider serviceProvider) =>
         app.UseEndpoints(endpoints =>
-            endpoints.MapHub<ChatHub>("/chatHub"));
+            endpoints.MapHub<ChatHub>("chatHub"));
 }
