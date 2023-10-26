@@ -16,5 +16,6 @@ public class ResourceManagementOptionsConfiguration : IConfigureOptions<Resource
             .DefineScript(ResourceNames.SignalRSampleApp)
             .SetUrl(Scripts + "/App.min.js", Scripts + "/App.js");
 
-    public void Configure(ResourceManagementOptions options) => options.ResourceManifests.Add(_manifest);
+    public void Configure(ResourceManagementOptions options) =>
+        options?.ResourceManifests.Add(_manifest);
 }
